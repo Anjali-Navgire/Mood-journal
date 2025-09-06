@@ -15,6 +15,7 @@ const Login = () => {
   try {
     const res = await axios.post(
       "https://mood-journal-npfg.onrender.com/api/auth/login",
+      form,
       {
         email: form.email,
         password: form.password

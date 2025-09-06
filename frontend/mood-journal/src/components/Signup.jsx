@@ -14,13 +14,15 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("https://mood-journal-npfg.onrender.com/api/auth/signup", form);
+            const res = await axios.post("https://mood-journal-npfg.onrender.com/api/auth/signup", form,
+              { headers: { "Content-Type": "application/json" } }
+            );
             console.log("Axios response:", res);
             alert("Signup Successfully");
             localStorage.setItem("token", res.data.token);
             navigate("/home");
         } catch (err) {
-            alert(err.response.data.message || "Signup failed");
+            alert(err.response?.data?.message || "Signup failed");
         }
     };
 
