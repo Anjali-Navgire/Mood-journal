@@ -7,7 +7,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({origin:[ "https://mood-journal-npfg.onrender.com"],
+app.use(cors({
+  origin: [
+    "http://localhost:5173",                        // Local dev
+    "https://mood-journal-frontend-ytmo.onrender.com" // Deployed frontend
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
