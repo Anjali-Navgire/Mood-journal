@@ -8,10 +8,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({
-  origin: ["https://mood-journal-frontend-ytmo.onrender.com"],
+  origin: [
+    "http://localhost:5173",  // local frontend
+    "https://mood-journal-frontend-ytmo.onrender.com"  // deployed frontend
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use(express.json());
 
