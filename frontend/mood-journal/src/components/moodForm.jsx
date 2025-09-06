@@ -18,7 +18,7 @@ const MoodForm = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/moods/add",
+        "https://mood-journal-npfg.onrender.com/api/moods/add",
         { text },
         {
           headers: {

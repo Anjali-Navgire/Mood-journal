@@ -21,7 +21,7 @@ const Home = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/auth/profile", {
+      .get("https://mood-journal-npfg.onrender.com/api/auth/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json"

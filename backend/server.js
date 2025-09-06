@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({origin: "http://localhost:5173",
+app.use(cors({origin: "https://mood-journal-npfg.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -40,5 +40,7 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
+  console.log(`✅ Server is running on https://mood-journal-npfg.onrender.com`);
 });
+
+//Server is live on this port =>  https://mood-journal-npfg.onrender.com

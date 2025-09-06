@@ -14,7 +14,7 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:5000/api/auth/signup", form);
+            const res = await axios.post("https://mood-journal-npfg.onrender.com/api/auth/signup", form);
             console.log("Axios response:", res);
             alert("Signup Successfully");
             localStorage.setItem("token", res.data.token);

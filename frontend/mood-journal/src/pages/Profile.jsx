@@ -12,14 +12,14 @@ const ProfilePage = () => {
         if (!token) return;
 
         axios
-            .get("http://localhost:5000/api/auth/profile", {
+            .get("https://mood-journal-npfg.onrender.com/api/auth/profile", {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => setUser(res.data))
             .catch((err) => console.error(err));
 
         axios
-            .get("http://localhost:5000/api/moods", {
+            .get("https://mood-journal-npfg.onrender.com/api/moods", {
                 headers: { Authorization: `Bearer ${token}` },
             })
             .then((res) => setMoods(res.data.moods))
@@ -29,7 +29,7 @@ const ProfilePage = () => {
     const handleDelete = async (id) => {
         try {
             const token = localStorage.getItem("token");
-            await axios.delete(`http://localhost:5000/api/moods/delete/${id}`, {
+            await axios.delete(`https://mood-journal-npfg.onrender.com/api/moods/delete/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setMoods(moods.filter((m) => m._id !== id));
